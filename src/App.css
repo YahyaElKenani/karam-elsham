@@ -1,0 +1,10 @@
+* { 
+    --lightColor: #fef9e1;
+    --darkerColor: #e5d0ac;
+    --orangeColor: #ff9d23;
+    --brownColor: #c14600;
+}
+
+body { 
+    background-color: var(--lightColor);
+}
