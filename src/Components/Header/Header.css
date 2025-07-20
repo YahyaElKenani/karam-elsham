@@ -61,7 +61,7 @@ nav button:hover {
         gap: 20px;
         position: absolute;
         top: 150%;
-        left: -100px;
+        left: -150px;
         width: 200px;
         border-radius: 12px;
         padding: 24px 12px;
