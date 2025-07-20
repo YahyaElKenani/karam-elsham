@@ -8,7 +8,7 @@ import Aboutpage from './Pages/Aboutpage'
 function App() {
 
   return (
-    <Router> 
+    <Router basename='/karam-elsham'> 
       <Routes> 
         <Route path='/' element={<Homepage />} /> 
         <Route path='/menu' element={<Menupage />} />
