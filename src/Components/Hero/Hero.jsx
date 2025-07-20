@@ -10,8 +10,8 @@ export default function Hero() {
             transition={{duration: 0.7}}
             className='flex flex-col items-center gap-4'>
                 <img src={logo} alt='logo' className='w-44'/>
-                <div className='md:text-7xl text-4xl text-amber-600'>كرم الشام</div>
-                <div className='md:text-3xl text-xl text-orange-700'>ألذ السندوتشات بأكبر الاحجام</div>
+                <div className='md:text-7xl text-3xl text-amber-600'>كرم الشام</div>
+                <div className='md:text-3xl text-lg text-orange-700'>ألذ السندوتشات بأكبر الاحجام</div>
             </Motion.div>
         </div>
     )

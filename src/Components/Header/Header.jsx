@@ -15,7 +15,7 @@ export default function Header({active, HeaderTheme}) {
         initial={{opacity: 0, y: -50}}
         animate={{opacity: 1, y: 0}}
         transition={{duration: 0.6}}
-        className='flex w-full h-32 justify-around px-12 py-6 items-center'> 
+        className='flex w-full h-32 md:justify-around justify-between px-12 py-6 items-center'> 
             <img src={logo} alt='logo' className='h-full hover:cursor-pointer' onClick={() => {routeToPage('')}}/>
             <nav className={`flex flex-col text-xl justify-between ${HeaderTheme === 'dark' ? 'text-black' : 'text-gray-50'}`}> 
                 <button className='cursor-pointer self-end' onClick={() => setShowTabs((prevState) => !prevState)}><IoIosMenu /></button>
