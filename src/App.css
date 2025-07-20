@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oi&display=swap');
 * { 
     --lightColor: #fef9e1;
-    --darkerColor: #e5d0ac;
+    --darkerColor: #ecddc1;
     --orangeColor: #ff9d23;
     --brownColor: #c14600;
 }
 
 body { 
-    background-color: var(--lightColor);
+    background-color: var(--darkerColor);
+    font-family: 'Alexandria', sans-serif;
+    overflow-x: hidden;
 }

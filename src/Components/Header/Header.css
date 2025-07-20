@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+header { 
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 nav div { 
     position: relative;
 }
@@ -19,7 +25,7 @@ nav {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--orangeColor);
+    background-color: var(--color-orange-700);
     transition: all 0.5s ease;
 }
 
@@ -55,8 +61,12 @@ nav button:hover {
         gap: 20px;
         position: absolute;
         top: 150%;
-        left: 0;
+        left: -100px;
+        width: 200px;
+        border-radius: 12px;
+        padding: 24px 12px;
         z-index: 5;
+        color: white;
     }
 
     .nav-tabs.show-tabs {
