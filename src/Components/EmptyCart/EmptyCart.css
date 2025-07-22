@@ -1,0 +1,9 @@
+.empty-cart { 
+    min-height: 100dvh;
+    width: 100dvw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+}

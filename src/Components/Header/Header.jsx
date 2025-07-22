@@ -4,8 +4,12 @@ import { motion as Motion } from 'framer-motion'
 import { useState } from 'react';
 import { IoIosMenu } from "react-icons/io";
 import logo from '../../assets/Images/karam-elsham-logo.png'
+import { HiOutlineShoppingCart } from "react-icons/hi2";
+import { Badge } from '@mui/material';
+import { useSelector } from 'react-redux';
 export default function Header({active, HeaderTheme}) { 
     const navigate = useNavigate();
+    const cart = useSelector((state) => state.cart.cart); 
     const [showTabs, setShowTabs] = useState(false);
     const routeToPage = (pageName) => { 
         navigate(`/${pageName}`);
@@ -19,7 +23,7 @@ export default function Header({active, HeaderTheme}) {
             <img src={logo} alt='logo' className='h-full hover:cursor-pointer' onClick={() => {routeToPage('')}}/>
             <nav className={`flex flex-col text-xl justify-between ${HeaderTheme === 'dark' ? 'text-black' : 'text-gray-50'}`}> 
                 <button className='cursor-pointer self-end' onClick={() => setShowTabs((prevState) => !prevState)}><IoIosMenu /></button>
-                <div className={`nav-tabs flex w-100 justify-between bg-amber-600 md:bg-transparent ${showTabs && 'show-tabs'}`}>
+                <div className={`nav-tabs flex w-100 justify-between items-center bg-amber-600 md:bg-transparent ${showTabs && 'show-tabs'}`}>
                     <div 
                     className={`${active === 'home' && 'opacity-100 font-bold active'} opacity-50 hover:opacity-100 transition-all transition-duration-700 cursor-pointer`}
                     onClick={() => routeToPage('')}
@@ -36,6 +40,11 @@ export default function Header({active, HeaderTheme}) {
                     <div className={`${active === 'about' && 'opacity-100 font-bold active'} opacity-50 hover:opacity-100 transition-all transition-duration-700 cursor-pointer`}
                     onClick={() => routeToPage('about')}
                     >About</div>
+                    <div onClick={() => routeToPage('cart')}>
+                        <Badge badgeContent={cart.length && cart.length} color='success'> 
+                            <HiOutlineShoppingCart style={{fontSize: '24px'}}/>
+                        </Badge>
+                    </div>
                 </div>
             </nav>
         </Motion.header>

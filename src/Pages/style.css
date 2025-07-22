@@ -13,3 +13,21 @@
 .contact-page-container { 
     min-height: 100dvh;
 }
+
+.checkout-container input { 
+    transition: scale 0.3s ease;
+}
+
+.checkout-container input:focus { 
+    outline: 2px solid var(--color-amber-600);
+    scale: 1.05;
+}
+
+.checked-page { 
+    min-height: 100dvh;
+    width: 100dvw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}

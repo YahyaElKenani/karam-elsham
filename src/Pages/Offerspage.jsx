@@ -2,10 +2,15 @@ import { useEffect, useState } from "react";
 import Header from "../Components/Header/Header";
 import axios from "axios";
 import Loading from "../Components/Loading/Loading";
+import { HiOutlineShoppingCart } from "react-icons/hi2";
 import { motion as Motion } from 'framer-motion'
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Slices/cartSlice";
+import { Tooltip } from "@mui/material";
 export default function Offerspage() { 
     const [offers, setOffers] = useState([]);
     const [loading, setLoading] = useState(true);
+    const dispatch = useDispatch()
     useEffect(() => {
         axios.get('https://karam-elsham-api.vercel.app/offers')
         .then((response) => setOffers(response.data))
@@ -33,7 +38,14 @@ export default function Offerspage() {
                             <div className="offer-content flex flex-col md:gap-7 gap-2 justify-center" dir="rtl"> 
                                 <div className="md:text-3xl text-xl font-bold mt-3 md:mt-0">{item.name}</div>
                                 <div className="md:text-lg/8 text-md max-w-80">{item.content}</div>
-                                <div className="md:text-2xl text-lg font-bold">{item.price} جنيه</div>
+                                <div className="flex w-full justify-between"> 
+                                    <div className="md:text-2xl text-lg font-bold">{item.price} جنيه</div>
+                                    <Tooltip title="Add to cart"> 
+                                        <div className='text-gray-50 p-2 rounded-xl bg-orange-700 hover:cursor-pointer' style={{fontSize: '24px'}}
+                                        onClick={() => dispatch(addToCart(item))}
+                                        ><HiOutlineShoppingCart /></div>
+                                    </Tooltip>
+                                </div>
                             </div>
                         </div>)
                     }
